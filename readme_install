@@ -1,0 +1,28 @@
+sudo apt-get update
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+NODE_MAJOR=22
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+sudo apt-get update
+sudo apt-get install nodejs -y
+npm install web3
+npm install --save-dev hardhat hardhat-toolbox-viem ethers@6
+npm install @openzeppelin/contracts@4.5.0
+  
+npx hardhat --init
+ls
+npx create-react-app pinata
+cd pinata
+
+mkdir server
+cd server
+npm init -y
+npm i express multer cors dotenv @pinata/sdk
+vi .env
+vi server.js
+node server.js
+   
+# under /home/ubuntu/pinata/src
+vi App.js
+npm start
+history
